@@ -8,7 +8,12 @@ public class SwtWidget implements IWidget {
 	protected final Control control;
 
 	public SwtWidget(Control control) {
+		this(control, (String) control.getData("name"));
+	}
+	
+	public SwtWidget(Control control, String name) {
 		this.control = control;
+		control.setData("name", name);
 	}
 	
 	@Override

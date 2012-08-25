@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.Control;
 import org.jesko.squery.widget.IWidget;
 import org.jesko.squery.widget.SwtWidget;
 
-class SQuery {
+public class SQuery {
 	
 	private static SQuery instance = new SQuery();
 	
