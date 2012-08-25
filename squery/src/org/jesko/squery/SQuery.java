@@ -15,7 +15,7 @@ public class SQuery {
 	
 	private static SQuery instance = new SQuery();
 	
-	private IWidget activeControl;
+	private IWidget activeWidget;
 	private Map<String, IWidget> controls;
 	
 	private SQuery() {
@@ -38,21 +38,21 @@ public class SQuery {
 	}
 
 	public SQuery append(IWidgetFactory widgetFactory) {
-		IWidget newControl = widgetFactory.build(activeControl, widgetFactory.getName());
+		IWidget newControl = widgetFactory.build(activeWidget, widgetFactory.getName());
 		addControl(newControl);
-		activeControl.pack();
+		activeWidget.pack();
 		return this;
 	}
 	
 	public SQuery text(String text) {
-		activeControl.setText(text);
-		activeControl.pack();
-		activeControl.getParent().pack();
+		activeWidget.setText(text);
+		activeWidget.pack();
+		activeWidget.getParent().pack();
 		return this;
 	}
 	
 	public SQuery click(final ICallback callback) {
-		activeControl.addMouseListener(new MouseAdapter() {
+		activeWidget.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				callback.run(e);
@@ -62,7 +62,7 @@ public class SQuery {
 	}
 	
 	private void setActiveControl(IWidget control) {
-		this.activeControl = control;
+		this.activeWidget = control;
 	}
 	
 	private void addControl(IWidget control) {
