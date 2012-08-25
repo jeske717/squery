@@ -44,5 +44,4 @@ public class SwtWidget implements IWidget {
 	public Control getControl() {
 		return control;
 	}
-
 }

@@ -66,6 +66,6 @@ public class SQuery {
 	}
 	
 	private void addControl(IWidget control) {
-		controls.put((String) control.getName(), control);
+		controls.put(control.getName(), control);
 	}
 }
