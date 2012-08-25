@@ -38,7 +38,7 @@ public class SQuery {
 	}
 
 	public SQuery append(IWidgetFactory widgetFactory) {
-		IWidget newControl = widgetFactory.build(activeWidget, widgetFactory.getName());
+		IWidget newControl = widgetFactory.build(activeWidget);
 		addControl(newControl);
 		activeWidget.pack();
 		return this;

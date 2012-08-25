@@ -5,6 +5,6 @@ import org.jesko.squery.widget.IWidget;
 
 public interface IWidgetFactory {
 
-	IWidget build(IWidget parent, String name);
+	IWidget build(IWidget parent);
 	String getName();
 }

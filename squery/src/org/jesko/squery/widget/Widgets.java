@@ -15,7 +15,7 @@ public class Widgets {
 			}
 			
 			@Override
-			public IWidget build(IWidget parent, String name) {
+			public IWidget build(IWidget parent) {
 				Text text = new Text((Composite) parent.getControl(), SWT.NONE);
 				return new SwtTextWidget(text, name);
 			}
@@ -31,7 +31,7 @@ public class Widgets {
 			}
 			
 			@Override
-			public IWidget build(IWidget parent, String name) {
+			public IWidget build(IWidget parent) {
 				Button button = new Button((Composite) parent.getControl(), SWT.PUSH);
 				return new SwtButtonWidget(button, name);
 			}

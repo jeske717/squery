@@ -4,7 +4,6 @@ import static org.jesko.squery.SQuery.$;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -32,7 +31,7 @@ public class SQueryTest {
 	
 	@Before
 	public void setUp() {
-		when(factory.build(any(IWidget.class), anyString())).thenReturn(widget);
+		when(factory.build(any(IWidget.class))).thenReturn(widget);
 		when(widget.getParent()).thenReturn(mock(IWidget.class));
 	}
 	
